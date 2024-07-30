@@ -1,0 +1,120 @@
+@use "colors.scss";
+@use "mixins.scss";
+@use "variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: variables.$font-family;
+}
+main {
+  min-height: 700px;
+}
+.navbarlayout-container {
+  position: relative;
+}
+
+.blog-container {
+  justify-content: center;
+  text-align: center;
+}
+.blog-content {
+  padding-top: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+
+/* footer */
+
+.footer-container {
+  height: 176px;
+  width: 100vw;
+  background: colors.$footer-background-color;
+  align-content: center;
+}
+
+.footer-content,
+.footer-legality,
+.footer-socialmedias-logo {
+  display: flex;
+}
+.footer-content {
+  justify-content: space-between;
+  max-width: 80%;
+  margin: auto;
+
+  p {
+    color: colors.$default-color;
+    font-size: variables.$footer-font-size;
+  }
+}
+.footer-socialmedias {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-socialmedias-logo {
+  gap: 20px;
+  padding-right: 20px;
+  width: 600px;
+}
+.icon-container {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 30px;
+  padding: 10px 10px;
+  background-color: colors.$socialmeadia-logo-wrap;
+}
+
+.footer-socialmedias-title {
+  color: colors.$default-color;
+  font-size: variables.$footer-font-size;
+}
+.footer-legality {
+  width: 200px;
+  justify-content: space-between;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 320px) {
+  main {
+    min-height: 500px;
+  }
+  .footer-container {
+    height: 250px;
+    width: 100vw;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+    padding: 0 0 0 15px;
+  }
+  .footer-socialmedias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-socialmedias-logo {
+    display: flex;
+    width: 100vw;
+    gap: 20px;
+    flex-direction: row;
+  }
+  .icon-container {
+    justify-content: center;
+    border-radius: 30px;
+    width: 5px;
+    height: 5px;
+    font-size: x-small;
+  }
+  .footer-legality {
+    display: flex;
+    flex-direction: row;
+  }
+}
