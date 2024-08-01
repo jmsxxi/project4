@@ -1,8 +1,5 @@
-import { useState } from "react";
-import postsData from "./posts.json";
-import NavBar from "./components/NavigationBar/NavBar";
 import Blog from "./pages/Blog";
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Login from "./pages/Login";
 import Reviews from "./pages/Reviews";
 import SignUp from "./pages/SignUp";
@@ -11,6 +8,7 @@ import { PostsList } from "./components/PostsList";
 import { PostImage } from "./components/PostImage";
 import NavBarLayout from "./Layout/NavBarLayout";
 import "./assets/css/main.css";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -29,8 +27,6 @@ const router = createBrowserRouter(
   )
 );
 function App() {
-  const [posts, setPosts] = useState(postsData);
-
   /*
     TODO:
     1. Install React router 
@@ -59,8 +55,7 @@ function App() {
 
   return (
     <div className="">
-      {/* <PostsList posts={posts} />
-      <PostImage addImageSuccessful={handleImageSuccess} /> */}
+      {/*  <PostImage addImageSuccessful={handleImageSuccess} /> */}
       <RouterProvider router={router} />
     </div>
   );
