@@ -6,6 +6,7 @@ import postsData from "../posts.json";
 
 const Blog = () => {
   const [posts, setPosts] = useState(postsData);
+  const [isLiked, setIsLiked] = useState(false);
 
   return (
     <div className="blog-container">
@@ -46,12 +47,12 @@ const Blog = () => {
                 <div className="blog-post-container-description">
                   <div className="blog-post-container-description-title">
                     <h3>
-                      {post.title.length > 25
-                        ? post.title.substring(0, 25).concat("...")
+                      {post.title.length > 30
+                        ? post.title.substring(0, 27).concat("...")
                         : post.title}
                     </h3>
                     <p className="text-wrap">
-                      {post.text.substring(0, 77).concat("...")}
+                      {post.text.substring(0, 70).concat("...")}
                     </p>
                   </div>
 
@@ -62,23 +63,23 @@ const Blog = () => {
                       <p>{post.author}</p>
                     </div>
                     <div className="blog-post-container-commentlogo">
-                      <div className="comment-section ">
+                      <div className="comment-section">
                         <div className="comment-icon">
-                          <FontAwesomeIcon icon={faMessage} size="lg" />
+                          <FontAwesomeIcon icon={faMessage} />
                         </div>
                         <span>
                           {" "}
-                          {post.commentCount.toString().length > 2
+                          {post.commentCount.toString().length > 3
                             ? post.commentCount
                                 .toString()
                                 .substring(0, 1)
                                 .concat("k")
-                            : post.commentCount.toString().concat("k")}
+                            : post.commentCount}
                         </span>
                       </div>
                       <div className="like-section">
                         <div className="like-icon">
-                          <FontAwesomeIcon size="xl" icon={faHeart} />{" "}
+                          <FontAwesomeIcon icon={faHeart} />{" "}
                         </div>
                         <span>
                           {" "}

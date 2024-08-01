@@ -1,0 +1,16 @@
+.aboutUs-container {
+  max-width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.aboutus-content {
+  padding-top: 50px;
+}
+
+.aboutus-details {
+  padding-top: 20px;
+}
+
+p {
+  padding-top: 20px;
+}
