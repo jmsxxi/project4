@@ -12,7 +12,7 @@ const NavBar = () => {
   const Menu = () => (
     <>
       <div className="navbar-links">
-        <NavLink to="blog">Blog</NavLink>
+        <NavLink to="showblogs">Blog</NavLink>
         <NavLink to="aboutus">About Us</NavLink>
         <NavLink to="reviews">Reviews</NavLink>
       </div>

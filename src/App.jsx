@@ -1,14 +1,18 @@
-import Blog from "./pages/Blog";
+import Blog from "./pages/Blogs/Blog";
+import ShowFavorites from "./pages/ShowFavorites/ShowFavorites";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import BlogPostLayout from "./Layout/BlogPostLayout";
 import Login from "./pages/Login";
 import Reviews from "./pages/Reviews";
 import SignUp from "./pages/SignUp";
+import { MyContext } from "./MyContextProvider";
 import "./App.css";
+import postsData from "./posts.json";
 import { PostsList } from "./components/PostsList";
 import { PostImage } from "./components/PostImage";
 import NavBarLayout from "./Layout/NavBarLayout";
 import "./assets/css/main.css";
-
+import { useState } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -20,13 +24,17 @@ import Footer from "./components/Footer/Footer";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<NavBarLayout />}>
-      <Route path="blog" element={<Blog />} />
+      <Route path="showblogs" element={<BlogPostLayout />}>
+        <Route index element={<Blog />} />
+        <Route path="favorites" element={<ShowFavorites />} />
+      </Route>
       <Route path="aboutus" element={<AboutUs />} />
       <Route path="reviews" element={<Reviews />} />
     </Route>
   )
 );
 function App() {
+  const [posts, setPosts] = useState(postsData);
   /*
     TODO:
     1. Install React router 
@@ -55,8 +63,10 @@ function App() {
 
   return (
     <div className="">
+      <MyContext.Provider value={{ posts }}>
+        <RouterProvider router={router} />
+      </MyContext.Provider>
       {/*  <PostImage addImageSuccessful={handleImageSuccess} /> */}
-      <RouterProvider router={router} />
     </div>
   );
 }

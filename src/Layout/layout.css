@@ -1,0 +1,38 @@
+.blogpostlayout-container {
+  width: 100vw;
+  padding-top: 50px;
+}
+.ctaSection {
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.ctaSection a {
+  text-decoration: none;
+}
+.showpost-btn {
+  display: flex;
+  gap: 30px;
+}
+.ctaSection .btnActive {
+  background-color: #0266ff;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 15px 25px;
+}
+.ctaSection .btn:hover {
+  background: rgba(12, 41, 168, 0.459);
+}
+
+.ctaSection .btnDefault {
+  background-color: #fff;
+  border: 1px solid #0266ff;
+  color: #0266ff;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 15px 25px;
+}

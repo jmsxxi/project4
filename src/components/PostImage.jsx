@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import LoadingSpinner from "./LoadingSpinner";
+
 import { uploadImage } from "../plugins/uploadImage";
 
 export const PostImage = ({ addImageSuccessful }) => {
@@ -37,7 +37,6 @@ export const PostImage = ({ addImageSuccessful }) => {
         backgroundSize: "cover",
       }}
     >
-      {isLoading ? <LoadingSpinner /> : ""}
       <label
         className="image-button"
         style={{

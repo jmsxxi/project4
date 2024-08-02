@@ -1,42 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 import { faHeart, faPlus, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import postsData from "../posts.json";
+import postsData from "../../posts.json";
+import { MyContext } from "../../MyContextProvider";
+import "./blogs.css";
+import ShowFavorites from "../ShowFavorites/ShowFavorites";
+import Reviews from "../Reviews";
 
 const Blog = () => {
   const [posts, setPosts] = useState(postsData);
-  const [isLiked, setIsLiked] = useState(false);
-
+  const [toggleMyFavorites, setToggleMyFavorites] = useState(false);
   return (
     <div className="blog-container">
       <div className="blog-content">
-        <div className="blog-buttons">
-          <div className="button-showpost">
-            <Button color="btn btnActive"> All posts </Button>
-            <Button color="btn btnDefault">Favorites</Button>
-          </div>
-          <div className="button-action">
-            <Button color="btn btnDefault">
-              <FontAwesomeIcon
-                icon={faPlus}
-                size="lg"
-                style={{ color: "#0266ff" }}
-              />
-              {"         "}
-              Add post
-            </Button>
-
-            <Button color="addPost-mobile">
-              {" "}
-              <FontAwesomeIcon
-                icon={faPlus}
-                size="2xl"
-                style={{ color: "#0266ff" }}
-              />
-            </Button>
-          </div>
-        </div>
         <div className="blog-post">
           {posts.map((post, index) => (
             <div className="blog-post-container" key={index}>
@@ -47,8 +24,8 @@ const Blog = () => {
                 <div className="blog-post-container-description">
                   <div className="blog-post-container-description-title">
                     <h3>
-                      {post.title.length > 30
-                        ? post.title.substring(0, 27).concat("...")
+                      {post.title.length > 25
+                        ? post.title.substring(0, 25).concat("...")
                         : post.title}
                     </h3>
                     <p className="text-wrap">
